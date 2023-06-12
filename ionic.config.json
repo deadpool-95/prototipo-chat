@@ -1,0 +1,7 @@
+{
+  "name": "protipo-chat",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
