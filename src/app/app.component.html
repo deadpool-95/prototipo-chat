@@ -1,3 +1,17 @@
 <ion-app>
+  <div style="position: fixed; width: 80%;z-index: 10; background-color: transparent; border-radius: 4px; margin-left: 10%; box-shadow: 10px 10px 5px grey;" 
+  [ngStyle]="{'display':mostrar}">
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/icon/avatar.svg">
+      </ion-avatar>
+      
+        Tienes un mensaje de {{emisor}}<br>
+      
+    </ion-item>
+    <ion-item>
+      {{nuevoMensaje}}
+    </ion-item>
+  </div>
   <ion-router-outlet></ion-router-outlet>
 </ion-app>

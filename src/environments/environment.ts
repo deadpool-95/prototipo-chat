@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: true,
+  urlBase: 'https://app.agrocomparador-services.com',
+  //urlBase: 'http://localhost/agrocomparador-services/public',
+  urlHost:"app.agrocomparador-services.com",
+  //urlHost:"127.0.0.1",
+  pusher_key: "some_key",
+  pusher_cluster:"mt1",
+  //pusher_host: 'http://localhost/agrocomparador-services/public'
 };
 
 /*
