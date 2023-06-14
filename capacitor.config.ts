@@ -5,7 +5,7 @@ const config: CapacitorConfig = {
   appName: 'protipo-chat',
   webDir: 'www',
   server: {
-    androidScheme: 'https'
+    androidScheme: 'http'
   }
 };
 

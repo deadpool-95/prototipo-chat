@@ -54,10 +54,10 @@ export class ChatComponent implements OnInit {
     
     if(localStorage.getItem('user')){ 
       console.log("Cargando usuarios...");
-      console.log(this.echo.private("channel-chat")
+      this.echo.private("channel-chat")
         .listen("ChatEvent",(resp:any)=>{
           console.log(resp);
-        }));
+        });
       
         this.echo.join("channel-chat")
         .here((users:any)=>{
@@ -104,7 +104,6 @@ export class ChatComponent implements OnInit {
 
         this.messages.push(mensaje);
 
-        var chats=JSON.parse(localStorage.getItem("chat")+"");
         
       }));
             setTimeout(()=>{
@@ -179,7 +178,6 @@ export class ChatComponent implements OnInit {
       console.log(id_usuario,this.auth.id);  
       console.log(resultado.length);
         //this.messages=resultado;
-        var chats=JSON.parse(localStorage.getItem("chats")+"");
           
     });
     

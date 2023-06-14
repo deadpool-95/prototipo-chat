@@ -16,7 +16,7 @@
     * Esta app ha sido desarrollado con el propósito de mostrar la funcionalidad del sistema de mensajería y de notificaciones, y llegar a implementarla en nuestro sistema.
   </p>
 
-  <form [formGroup]="formulario" (ngSubmit)="login()">
+  <form [formGroup]="formulario" (ngSubmit)="login()" [ngStyle]="{'display':back_login}">
     
     <ion-item class="form">
       <ion-label position="floating">Email</ion-label>
@@ -27,5 +27,23 @@
       <ion-input type="password" required formControlName="password"></ion-input>
     </ion-item>
     <ion-button type="submit" class="ion-margin-top" expand="block" [disabled]="formulario.invalid">Iniciar Sesión</ion-button>
+    <ion-button (click)="backRegister()" class="ion-margin-top" expand="block">REGISTRARSE</ion-button>
+  </form>
+  
+  <form [formGroup]="formulario_registro" (ngSubmit)="registrarse()" [ngStyle]="{'display':back_register}">
+    <ion-item class="form">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input class="form" type="text" required formControlName="name"></ion-input>
+    </ion-item>
+    <ion-item class="form">
+      <ion-label position="floating">Email</ion-label>
+      <ion-input class="form" type="text" required formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item class="form">
+      <ion-label  position="floating">Contraseña</ion-label>
+      <ion-input type="password" required formControlName="password"></ion-input>
+    </ion-item>
+    <ion-button type="submit" class="ion-margin-top" expand="block" [disabled]="formulario_registro.invalid">REGISTRAR</ion-button>
+    <ion-button (click)="backLogin()" class="ion-margin-top" expand="block">VOLVER</ion-button>
   </form>
 </ion-content>

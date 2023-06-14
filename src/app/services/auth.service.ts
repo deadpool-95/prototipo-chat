@@ -14,4 +14,10 @@ export class AuthService {
     return this.http.post(url,data);
 
   }
+
+  sendRegister(data:any){
+    const url=`${environment.urlBase}/api/auth/register`;
+    return this.http.post(url,data);
+
+  }
 }

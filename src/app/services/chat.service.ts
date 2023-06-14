@@ -83,10 +83,9 @@ export class ChatService {
           Authorization:`Bearer ${ localStorage.getItem('token') }`
         }
       },
-      //encrypted: true,
+      
       disableStats: true,
       enabledTransports:['ws'],
-      //disabledTransports:['sockjs']
 
     });
 

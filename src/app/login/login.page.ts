@@ -11,8 +11,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 })
 export class LoginPage implements OnInit {
 
-  
+  back_login:string="block";
+  back_register:string="none";
+
   formulario=new FormGroup({
+    email: new FormControl(null, Validators.required),
+    password: new FormControl(null, Validators.required)
+  });
+
+  formulario_registro=new FormGroup({
+    name: new FormControl(null, Validators.required), 
+    //username: new FormControl(null, Validators.required),
     email: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required)
   });
@@ -36,6 +45,26 @@ export class LoginPage implements OnInit {
         console.log("Autenticado",localStorage.getItem('user'));
         this.router.navigate(['chat']);
       });
+  }
+
+  registrarse(){
+    //this.formulario_registro.value.username=this.formulario_registro.value.email;
+
+    this.authService.sendRegister(this.formulario_registro.value)
+    .subscribe((resp:any) => {
+      console.log(resp);
+      this.backLogin();
+    });
+  }
+
+  backLogin(){
+    this.back_login="block";
+    this.back_register="none";
+  }
+
+  backRegister(){
+    this.back_login="none";
+    this.back_register="block";
   }
 
 }

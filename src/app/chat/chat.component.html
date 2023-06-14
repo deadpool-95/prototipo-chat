@@ -46,7 +46,7 @@
 <ng-template #usuarios>
   <ion-content fullscreen="true">
     <div style="background-color: white;position:absolute;height: 90%;width: 100%;">
-    <h1 style="color:red;text-align: center;">* En estos momentos no hay ningún usuario conectado {{userList.length}}</h1>
+    <h1 *ngIf="userList.length==1" style="color:red;text-align: center;">* En estos momentos no hay ningún usuario conectado</h1>
     <div *ngFor="let usuario of userList">
     <ion-item *ngIf="usuario.id != auth.id" (click)="seleccionarReceptor(usuario.id, usuario.name)">
       <ion-avatar slot="start">
