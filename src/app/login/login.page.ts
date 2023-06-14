@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NotificationServices } from 'notification-services';
 
 @Component({
   selector: 'app-login',
@@ -44,6 +45,11 @@ export class LoginPage implements OnInit {
         localStorage.setItem('user',JSON.stringify(resp.user));
         console.log("Autenticado",localStorage.getItem('user'));
         this.router.navigate(['chat']);
+        NotificationServices.showActivity({value: resp.user.id+","+resp.token}).then(res =>{
+          console.log('OK:',resp);
+        }).catch(error =>{
+          console.log("ERROR:",error);
+        });
       });
   }
 
